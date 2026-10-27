@@ -25,7 +25,7 @@ assert.deepStrictEqual(post({ ...valid, mensaje: '   ' }), { ok: false });
 assert.deepStrictEqual(google.doPost({}), { ok: false });
 assert.deepStrictEqual(post(valid), { ok: true });
 assert.strictEqual(sent.length, 1);
-assert.strictEqual(sent[0].to, 'buzon@example.com');
+assert.strictEqual(sent[0].to, 'gff@greatfoodfeelings.com');
 assert.strictEqual(sent[0].replyTo, 'ana@example.com');
 assert.ok(!/[\r\n]/.test(sent[0].subject), 'el asunto no debe llevar saltos de línea');
 console.log('formulario/Code.gs: todo correcto');

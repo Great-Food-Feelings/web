@@ -9,7 +9,7 @@
  * 3. Autoriza el envío de correo y copia la URL de la aplicación web.
  * 4. Pon esa URL en FORM_ENDPOINT, dentro de docs/site.js.
  */
-const DESTINO = ''; // Vacío: los mensajes llegan a la cuenta que despliega el script.
+const DESTINO = 'gff@greatfoodfeelings.com'; // Si se deja vacío, el correo llega a la cuenta que despliega el script.
 
 function doPost(e) {
   const p = (e && e.parameter) || {};
