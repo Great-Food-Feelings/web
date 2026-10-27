@@ -4,8 +4,7 @@
 .gff-hp { position: absolute !important; left: -9999px !important; }
 .gff-privacy { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; }
 .gff-privacy input { margin-top: 4px; }
-.gff-privacy a, .gff-privacy-info a { color: inherit; text-decoration: underline; }
-.gff-privacy-info { font-size: 13px; line-height: 1.5; opacity: 0.85; }
+.gff-privacy a { color: inherit; text-decoration: underline; }
 
 /* Enlaces legales del pie de página */
 #copyright .gff-legal-links { margin: 0; padding: 0; text-align: right; }
