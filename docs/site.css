@@ -1,43 +1,4 @@
-/* Estilos propios de la web estática: aviso de cookies, formulario y páginas legales. */
-
-/* Aviso de cookies, con el estilo de la cabecera y los botones de la web */
-.gff-cookies {
-  position: fixed;
-  z-index: 100000;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 20px 24px;
-  border-radius: 25px;
-  background: #fff;
-  box-shadow: 0 3px 45px rgba(0, 0, 0, 0.15);
-  color: #676767;
-  font-size: 15px;
-  line-height: 1.6;
-}
-.gff-cookies[hidden] { display: none; }
-.gff-cookies p { flex: 1 1 320px; margin: 0; padding: 0; }
-.gff-cookies a { color: #21305a; text-decoration: underline; }
-.gff-cookies div { display: flex; gap: 10px; }
-.gff-cookies button {
-  padding: 12px 26px;
-  border: 0;
-  border-radius: 200px;
-  background: #21305a;
-  color: #fff;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-.gff-cookies button:focus-visible { outline: 2px solid #21305a; outline-offset: 3px; }
+/* Estilos propios de la web estática: formulario y páginas legales. */
 
 /* Formulario: campo trampa oculto para personas y texto de privacidad */
 .gff-hp { position: absolute !important; left: -9999px !important; }

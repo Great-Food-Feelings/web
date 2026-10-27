@@ -5,8 +5,8 @@ Web estática de www.greatfoodfeelings.com. Sustituye a la web hecha con WordPre
 ## Qué hay en cada carpeta
 
 - `docs/`: la web publicada. GitHub Pages publica esta carpeta tal cual.
-  - `index.html` (español), `en/index.html` (inglés), `legal/` y `en/legal/` (aviso legal, privacidad y cookies), `404.html`.
-  - `site.js` y `site.css`: el código propio (aviso de cookies, formulario de contacto y año del pie).
+  - `index.html` (español), `en/index.html` (inglés), `legal/` y `en/legal/` (aviso legal y privacidad), `404.html`.
+  - `site.js` y `site.css`: el código propio (formulario de contacto y año del pie).
   - `wp-content/`, `wp-includes/` y `fonts/`: estilos, scripts, imágenes y tipografías copiados de la web WordPress, con las mismas rutas.
 - `formulario/Code.gs`: el Google Apps Script que recibe el formulario de contacto y lo envía por correo. `node formulario/check.js` lo comprueba.
 
