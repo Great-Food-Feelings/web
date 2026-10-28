@@ -8,6 +8,9 @@
  *    Ejecutar como: Yo. Quién tiene acceso: Cualquier usuario.
  * 3. Autoriza el envío de correo y copia la URL de la aplicación web.
  * 4. Pon esa URL en FORM_ENDPOINT, dentro de docs/site.js.
+ *
+ * Para cambiar el script sin cambiar la URL: Implementar > Gestionar implementaciones > Editar > Versión: Nueva versión.
+ * Una implementación nueva tiene otra URL, y el formulario de la web deja de funcionar hasta cambiar FORM_ENDPOINT.
  */
 const DESTINO = 'gff@greatfoodfeelings.com'; // Si se deja vacío, el correo llega a la cuenta que despliega el script.
 
