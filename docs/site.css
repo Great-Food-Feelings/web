@@ -1,0 +1,22 @@
+/* Estilos propios de la web estática: formulario y páginas legales. */
+
+/* Formulario: campo trampa oculto para personas y texto de privacidad */
+.gff-hp { position: absolute !important; left: -9999px !important; }
+.gff-privacy { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.5; }
+.gff-privacy input { margin-top: 4px; }
+.gff-privacy a { color: inherit; text-decoration: underline; }
+
+/* Enlaces legales del pie de página */
+#copyright .gff-legal-links { margin: 0; padding: 0; text-align: right; }
+#copyright .gff-legal-links a { color: inherit; }
+@media (max-width: 999px) { #copyright .gff-legal-links { text-align: left; } }
+
+/* Páginas legales */
+/* La cabecera flota sobre el contenido: el relleno superior deja ver el título. */
+.gff-legal { max-width: 860px; margin: 0 auto; padding: 180px 0 90px; }
+@media (max-width: 999px) { .gff-legal { padding-top: 120px; } }
+.gff-legal h2 { margin: 50px 0 16px; scroll-margin-top: 140px; }
+.gff-legal h3 { margin: 28px 0 8px; font-size: 20px; line-height: 1.4; }
+.gff-legal ul { margin: 0 0 20px 22px; }
+.gff-legal table { width: 100%; margin: 10px 0 24px; border-collapse: collapse; font-size: 16px; }
+.gff-legal th, .gff-legal td { padding: 8px 12px; border: 1px solid #e2e2e2; text-align: left; }
