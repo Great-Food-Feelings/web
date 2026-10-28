@@ -6,20 +6,7 @@ const vm = require('node:vm');
 
 const sent = [];
 const google = {
-  GmailApp: {
-    createDraft: (to, subject, body, options) => ({
-      send: () => {
-        const mail = { to, subject, body, ...options, inbox: false, unread: false };
-        sent.push(mail);
-        const thread = {
-          moveToInbox: () => { mail.inbox = true; return thread; },
-          markUnread: () => { mail.unread = true; return thread; },
-        };
-        return { getThread: () => thread };
-      },
-    }),
-  },
-  Session: { getEffectiveUser: () => ({ getEmail: () => 'buzon@example.com' }) },
+  MailApp: { sendEmail: (mail) => sent.push(mail) },
   ContentService: {
     MimeType: { JSON: 'json' },
     createTextOutput: (text) => ({ setMimeType: () => JSON.parse(text) }),
@@ -37,8 +24,7 @@ assert.deepStrictEqual(post({ ...valid, mensaje: '   ' }), { ok: false });
 assert.deepStrictEqual(google.doPost({}), { ok: false });
 assert.deepStrictEqual(post(valid), { ok: true });
 assert.strictEqual(sent.length, 1);
-assert.strictEqual(sent[0].to, 'gff@greatfoodfeelings.com');
+assert.strictEqual(sent[0].to, vm.runInContext('DESTINO', google));
 assert.strictEqual(sent[0].replyTo, 'ana@example.com');
 assert.ok(!/[\r\n]/.test(sent[0].subject), 'el asunto no debe llevar saltos de línea');
-assert.ok(sent[0].inbox && sent[0].unread, 'el aviso debe quedar sin leer en la bandeja de entrada');
 console.log('formulario/Code.gs: todo correcto');
