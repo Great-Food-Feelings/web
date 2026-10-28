@@ -2,7 +2,7 @@
 // 1. Formulario de contacto: envía el mensaje al Google Apps Script de formulario/Code.gs.
 // 2. Año actual en el pie de página.
 (() => {
-  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwQn1WJCfRur-zbBxC_eytwo2oaq5t9D4AHpm6XcfbTBZEAsU4F5u7-NBrZLxb-N5rT/exec'; // Aplicación web de Apps Script (ver formulario/Code.gs).
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxQAgJaQtbGdtn6JZCiXTjncpDwhmN4FRZlPF7vNfrUu1vBjQWe1pw4URWG1n0kYb90/exec'; // Aplicación web de Apps Script (ver formulario/Code.gs).
   const en = document.documentElement.lang.startsWith('en');
 
   // 1. Formulario de contacto
