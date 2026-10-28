@@ -6,7 +6,7 @@
  * 1. En https://script.google.com, crea un proyecto nuevo y pega este archivo.
  * 2. Implementar > Nueva implementación > Tipo: Aplicación web.
  *    Ejecutar como: Yo. Quién tiene acceso: Cualquier usuario.
- * 3. Autoriza el envío de correo y copia la URL de la aplicación web.
+ * 3. Autoriza el acceso a Gmail y copia la URL de la aplicación web.
  * 4. Pon esa URL en FORM_ENDPOINT, dentro de docs/site.js.
  *
  * Para cambiar el script sin cambiar la URL: Implementar > Gestionar implementaciones > Editar > Versión: Nueva versión.
@@ -23,13 +23,15 @@ function doPost(e) {
   const asunto = linea(p.asunto, 400);
   const mensaje = String(p.mensaje || '').trim().slice(0, 5000);
   if (!nombre || !mensaje || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return respuesta(false);
-  MailApp.sendEmail({
-    to: DESTINO || Session.getEffectiveUser().getEmail(),
-    replyTo: email,
-    name: 'Web Great Food Feelings',
-    subject: 'Web: ' + (asunto || 'mensaje de ' + nombre),
-    body: `Nombre: ${nombre}\nEmail: ${email}\nAsunto: ${asunto}\nIdioma: ${linea(p.idioma, 5)}\n\n${mensaje}`,
-  });
+  const correo = GmailApp.createDraft(
+    DESTINO || Session.getEffectiveUser().getEmail(),
+    'Web: ' + (asunto || 'mensaje de ' + nombre),
+    `Nombre: ${nombre}\nEmail: ${email}\nAsunto: ${asunto}\nIdioma: ${linea(p.idioma, 5)}\n\n${mensaje}`,
+    { replyTo: email, name: 'Web Great Food Feelings' }
+  ).send();
+  // Gmail deja solo en Enviados el correo que una cuenta se manda a sí misma (también a través de un alias o un grupo).
+  // Por eso el aviso se mueve a la bandeja de entrada y se marca como no leído.
+  correo.getThread().moveToInbox().markUnread();
   return respuesta(true);
 }
 
